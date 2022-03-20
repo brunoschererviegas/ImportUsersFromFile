@@ -1,0 +1,106 @@
+package br.com.syonet.users;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+
+import br.com.syonet.users.model.entity.User;
+
+public class ConnectionFactory {
+
+	static String url = "jdbc:postgresql://localhost:5432/usuarios";
+	static String username = "syonet";
+	static String password = "syonet";
+	static String querySelect = "SELECT * FROM syo_usuarios";
+	static String queryInsert = "INSERT INTO public.syo_usuarios "
+			+ "(id_usuario,nm_login,id_grupo,id_dominio,ds_senha," + "id_tipo,ap_usuario,nm_usuario,ds_email,ic_ativo)"
+			+ "values(?,?,?,?,?,?,?,?,?,?)";
+	static String queryIds = "SELECT count(*) from syo_usuarios";
+
+	public static void main(String[] args) {
+
+	}
+
+	public ArrayList<User> returnUsersInfosFromDB() {
+
+		ArrayList<User> arrayUsersFromDB = new ArrayList<User>();
+
+		try (Connection conn = DriverManager.getConnection(url, username, password);
+				Statement stmt = conn.createStatement();
+				ResultSet rs = stmt.executeQuery(querySelect);) {
+			while (rs.next())
+
+			{
+				User tempUser = new User();
+				tempUser.setLogin(rs.getString("nm_login"));
+				tempUser.setEmail(rs.getString("ds_email"));
+				tempUser.setId(rs.getLong("id_empresa"));
+				tempUser.setGroup(rs.getString("id_grupo"));
+				tempUser.setActive(true);
+				tempUser.setNm_usuario(rs.getString("nm_usuario"));
+				tempUser.setType(rs.getString("id_tipo"));
+				tempUser.setId_usuarioerp(rs.getString("id_usuarioerp"));
+
+				arrayUsersFromDB.add(tempUser);
+
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return arrayUsersFromDB;
+	}
+
+	public static String saveUserInDB(User user) {
+		User userForPersist = user;
+
+		try (Connection conn = DriverManager.getConnection(url, username, password);
+				Statement stmt = conn.createStatement();
+				PreparedStatement preparedStatement = conn.prepareStatement(queryInsert)) {
+
+			preparedStatement.setInt(0, 0);
+			preparedStatement.setString(1, userForPersist.getLogin());
+			preparedStatement.setString(2, userForPersist.getGroup());
+			preparedStatement.setString(3, userForPersist.getDomain());
+			preparedStatement.setString(4, userForPersist.getPassword());
+			preparedStatement.setString(5, userForPersist.getType());
+			preparedStatement.setString(6, userForPersist.getAp_usuario());
+			preparedStatement.setString(7, userForPersist.getNm_usuario());
+			preparedStatement.setString(8, userForPersist.getEmail());
+			preparedStatement.setBoolean(9, userForPersist.getActive());
+			preparedStatement.execute();
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return "User saved with Sucess";
+	}
+
+	public static Integer maxId() {
+		Integer count;
+		try (Connection conn = DriverManager.getConnection(url, username, password);
+				Statement stmt = conn.createStatement();
+				ResultSet rs = stmt.executeQuery(queryIds);){
+				count = rs.getInt(0);
+				
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+	
+
+}
+		return count;
+	}
+}
+
+//    public Connection getConnection() throws SQLException {
+//        var url = "jdbc:postgresql://localhost:5432/usuarios";
+//        var username = "syonet";
+//        var password = "syonet";
+//        
+//        return DriverManager.getConnection(url, username, password);
+//    }

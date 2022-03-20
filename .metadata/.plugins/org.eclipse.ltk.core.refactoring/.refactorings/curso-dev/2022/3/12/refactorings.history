@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;ConnectionFactory.java&apos; to &apos;br.com.syonet/src/main/java/br.com.syonet.users&apos;&#x0A;- Original project: &apos;curso-dev&apos;&#x0A;- Destination element: &apos;br.com.syonet/src/main/java/br.com.syonet.users&apos;&#x0A;- Original element: &apos;br.com.syonet.curso_dev.jdbc.ConnectionFactory.java&apos;" description="Copy compilation unit" destination="=br.com.syonet/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;br.com.syonet.users" element1="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;br.com.syonet.curso_dev.jdbc{ConnectionFactory.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1647205386427" units="1" version="1.0"/>
+</session>

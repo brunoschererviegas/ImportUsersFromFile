@@ -1,0 +1,20 @@
+1647204235648	Move elements
+1647204316956	Delete element
+1647204341038	Delete elements
+1647204408747	Copy package
+1647204441033	Copy package
+1647204456513	Delete element
+1647204474755	Move compilation units
+1647204483313	Delete element
+1647205629002	Delete element
+1647205796262	Delete element
+1647206464831	Delete element
+1647208769642	Delete element
+1647209694275	Delete element
+1647212502338	Rename method 'validatorUsers'
+1647216361541	Delete element
+1647395372799	Extract method 'returnUsersFromDB'
+1647397824049	Extract method 'importUsersFromFile'
+1647645163877	Rename method 'returnUsersFromDB'
+1647650268419	Rename local variable 'ExportUserFromFile'
+1647650530539	Rename method 'getUserLogin'

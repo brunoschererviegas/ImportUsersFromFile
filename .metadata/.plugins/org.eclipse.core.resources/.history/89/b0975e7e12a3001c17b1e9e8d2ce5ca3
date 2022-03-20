@@ -1,0 +1,10 @@
+package br.com.syonet.users.model.DAOs;
+
+import br.com.syonet.users.model.entity.User;
+
+public class UserDAO {
+
+	User registerUser(User user) {
+		
+	}
+}

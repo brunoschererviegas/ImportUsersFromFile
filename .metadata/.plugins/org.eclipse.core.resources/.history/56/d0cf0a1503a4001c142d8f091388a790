@@ -1,0 +1,44 @@
+package br.com.syonet.users;
+
+import java.lang.reflect.Array;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+
+public class ConnectionFactory {
+
+	static String url = "jdbc:postgresql://localhost:5432/usuarios";
+	static String username = "syonet";
+	static String password = "syonet";
+	static String query = "SELECT id_usuario, nm_login, ds_email,  FROM syo_usuarios";
+
+	public static void main (String[] args) {
+    	try(Connection conn = DriverManager.getConnection(url, username, password);
+        Statement stmt = conn.createStatement();
+        ResultSet rs = stmt.executeQuery(query);
+     ) {while(rs.next())
+
+	{
+    	 ArrayList<String> arrayLogins = new ArrayList<String>();
+    	 arrayLogins.add(rs.getString("id"));
+    	 ArrayList<String> arrayEmails = new ArrayList<String>();
+    	 arrayEmails.add(rs.getString("ds_email"));
+    	 
+		System.out.println(rs.getInt("id_usuario"));
+		System.out.println(rs.getString("nm_login"));
+	}}catch(SQLException e)	{
+		e.printStackTrace();
+	}
+}
+}
+
+//    public Connection getConnection() throws SQLException {
+//        var url = "jdbc:postgresql://localhost:5432/usuarios";
+//        var username = "syonet";
+//        var password = "syonet";
+//        
+//        return DriverManager.getConnection(url, username, password);
+//    }

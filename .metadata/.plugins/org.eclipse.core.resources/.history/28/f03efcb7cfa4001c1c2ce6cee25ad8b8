@@ -1,0 +1,11 @@
+package br.com.syonet.users;
+
+import br.com.syonet.users.ImportFromFile.ImportUsers;
+
+public class Main {
+
+	public static void main(String[] args) {
+		ImportUsers importedUsers = new ImportUsers();
+		
+	}
+}

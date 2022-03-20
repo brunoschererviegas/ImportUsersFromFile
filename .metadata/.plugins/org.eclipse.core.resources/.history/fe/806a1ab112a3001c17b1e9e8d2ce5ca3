@@ -1,0 +1,16 @@
+package br.com.syonet.users.model.DAOs;
+
+import java.sql.Connection;
+import java.util.logging.Logger;
+
+public class UserPostgresDAO implements UserD{
+	private final Logger log = Logger.getLogger(this.getClass().getCanonicalName());
+	private Connection conn;
+	
+	public UserPostgresDAO(Connection conn) {
+		this.conn = conn;
+	}
+	
+	@Override
+	
+}

@@ -1,0 +1,13 @@
+package br.com.syonet.users.ImportFromFile;
+
+import java.util.Iterator;
+import java.util.List;
+
+import br.com.syonet.users.model.entity.User;
+
+public class ValidatorUsers {
+
+	public Boolean execute(User user) {
+
+	}
+}

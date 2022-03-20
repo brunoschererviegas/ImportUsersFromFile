@@ -1,0 +1,17 @@
+package br.com.syonet.users.controller;
+
+import java.util.Scanner;
+import java.util.logging.Logger;
+
+import br.com.syonet.users.business.UserService;
+
+public class UserController {
+	private Logger log = Logger.getLogger(this.getClass().getCanonicalName());
+	private Scanner scanner;
+	private UserService userService;
+	public UserController(Scanner scanner, UserService userService) {
+		this.scanner = scanner;
+		this.userService = userService;
+	}
+	
+}

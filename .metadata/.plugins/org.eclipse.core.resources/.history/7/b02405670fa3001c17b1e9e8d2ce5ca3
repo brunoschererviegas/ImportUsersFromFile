@@ -1,0 +1,121 @@
+package br.com.syonet.users.model.entity;
+
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+public class User {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+	
+	@Column
+	private String login;
+	
+	@Column
+	private String group;
+	
+	@Column
+	private String domain;
+	
+	@Column
+	private String password;
+	
+	@Column
+	private String type;
+	
+	@Column
+	private String ap_usuario;
+	
+	@Column
+	private String nm_usuario;
+	
+	@Column
+	private String email;
+	
+	@Column
+	private Boolean active;
+	
+		
+	public Long getId() {
+		return id;
+	}
+	
+	public void setId(Long id) {
+		this.id = id;
+	}
+	
+	public String getLogin() {
+		return login;
+	}
+	
+	public void setLogin(String login) {
+		this.login = login;
+	}
+	
+	public String getGroup() {
+		return group;
+	}
+	
+	public void setGroup(String group) {
+		this.group = group;
+	}
+	
+	public String getDomain() {
+		return domain;
+	}
+	
+	public void setDomain(String domain) {
+		this.domain = domain;
+	}
+	
+	public String getPassword() {
+		return password;
+	}
+	
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	
+	public String getType() {
+		return type;
+	}
+	
+	public void setType(String type) {
+		this.type = type;
+	}
+	
+	public String getAp_usuario() {
+		return ap_usuario;
+	}
+	
+	public void setAp_usuario(String ap_usuario) {
+		this.ap_usuario = ap_usuario;
+	}
+	
+	public String getNm_usuario() {
+		return nm_usuario;
+	}
+	
+	public void setNm_usuario(String nm_usuario) {
+		this.nm_usuario = nm_usuario;
+	}
+	
+	public String getEmail() {
+		return email;
+	}
+	
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	
+	public Boolean getActive() {
+		return active;
+	}
+	
+	public void setActive(Boolean active) {
+		this.active = active;
+	}
+}

@@ -1,0 +1,5 @@
+package br.com.syonet.users.business;
+
+public class UserService {
+	UserDAO dao;
+}

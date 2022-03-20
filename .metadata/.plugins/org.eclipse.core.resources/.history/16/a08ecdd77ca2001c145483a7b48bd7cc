@@ -1,0 +1,61 @@
+package br.com.syonet.task.importFromFile;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+import br.com.syonet.exceptions.InvalidFileException;
+import br.com.syonet.exceptions.InvalidFileFormatException;
+import br.com.syonet.task.model.entity.User;
+
+public class ReaderUsers {
+
+	public List<User> readUsersFromFile(String path)
+			throws InvalidFileFormatException, FileNotFoundException, IOException {
+
+		File file = new File(path);
+		if (!file.isFile()) {
+			throw new InvalidFileException();
+		}
+		List<User> users = new ArrayList<User>();
+
+		try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
+			String line = null;
+
+			while ((line = reader.readLine()) != null) {
+				users.add(getUserFromLine(line));
+
+			}
+
+		}
+
+		return users;
+
+	}
+
+	private User getUserFromLine(String userLine) throws InvalidFileFormatException {
+		String[] info = userLine.split(",");
+		User user = new User();
+		for (String infoItem : info) {
+			if (infoItem == null) {
+				throw new InvalidFileFormatException();
+			}
+		}
+		user.setLogin(info[0]);
+		user.setGroup(info[1]);
+		user.setDomain(info[2]);
+		user.setPassword(info[3]);
+		user.setType(info[4]);
+		user.setAp_usuario(info[5]);
+		user.setNm_usuario(info[6]);
+		user.setEmail(info[7]);
+		user.setActive(info[8].equals("true"));
+
+		return user;
+
+	}
+}

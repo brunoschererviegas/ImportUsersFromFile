@@ -1,0 +1,28 @@
+package br.com.syonet.users;
+
+import java.util.ArrayList;
+
+import br.com.syonet.users.ImportFromFile.ImportUsers;
+import br.com.syonet.users.model.entity.User;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		ImportUsers usersFromFile = new ImportUsers(); 
+		
+		ConnectionFactory cF = new ConnectionFactory();
+		ArrayList<User> usersFromDB = cF.returnUsersFromDB();
+		ArrayList<User> arrayUsersFile = usersFromFile.importUsersFromFile();
+		
+		for (User userFile : arrayUsersFile) {
+			for (User userDB : usersFromDB) {
+				System.out.println(userDB);
+				System.out.println();
+				System.out.println(userFile);
+				System.out.println("-------------------");
+			}
+		}
+		
+	}
+}

@@ -1,0 +1,31 @@
+package br.com.syonet.users;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+import br.com.syonet.users.model.entity.User;
+
+public class InsertUserFromFile {
+	static String url = "jdbc:postgresql://localhost:5432/usuarios";
+	static String username = "syonet";
+	static String password = "syonet";
+
+	try(
+	Connection conn = DriverManager.getConnection(url, username, password);
+	Statement stmt = conn.createStatement();
+
+	static String query = "INSERT INTO public.syo_usuarios
+					(nm_login, id_grupo, id_dominio, id_tipo, ap_usuario, nm_usuario, ds_email, ic_ativo)
+					VALUES('SYONET', 'SYONET', 'SYONET', 'DIRETOR', 'SYONET', 'SYONET', 'a@b.c', true)";
+
+	ResultSet rs = stmt.executeQuery(query);)
+	{
+
+	}}catch(
+	SQLException e)
+	{
+		e.printStackTrace();
+}

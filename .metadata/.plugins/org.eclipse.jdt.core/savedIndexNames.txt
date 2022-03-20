@@ -1,0 +1,7 @@
+INDEX VERSION 1.131+/home/bruno/eclipse-workspace/.metadata/.plugins/org.eclipse.jdt.core
+1121433711.index
+1021418937.index
+2378896315.index
+3320551041.index
+2949097923.index
+1865797976.index

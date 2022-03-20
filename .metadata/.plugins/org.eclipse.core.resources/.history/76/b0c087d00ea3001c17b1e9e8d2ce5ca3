@@ -1,0 +1,6 @@
+package br.com.syonet.exceptions.copy2;
+
+
+public class InvalidFileFormatException extends Exception{
+	
+}
