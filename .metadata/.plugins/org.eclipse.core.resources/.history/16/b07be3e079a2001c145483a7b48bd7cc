@@ -1,6 +1,0 @@
-package br.com.syonet.exceptions;
-
-
-public class InvalidFileFormat extends Exception{
-	
-}

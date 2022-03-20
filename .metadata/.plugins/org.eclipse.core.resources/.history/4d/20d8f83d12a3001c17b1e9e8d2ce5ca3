@@ -1,5 +1,0 @@
-package br.com.syonet.users.model.DAOs;
-
-public class UserPostgresDAO {
-
-}

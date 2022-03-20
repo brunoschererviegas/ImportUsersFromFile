@@ -1,8 +1,0 @@
-package br.com.syonet.users.model.DAOs;
-
-public class UserDAO {
-
-	User registerUser(User user) {
-		
-	}
-}

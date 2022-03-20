@@ -54,8 +54,9 @@
     <fullyQualifiedTypeName name="java.util.logging.Logger"/>
     <fullyQualifiedTypeName name="java.sql.Connection"/>
     <fullyQualifiedTypeName name="java.sql.DriverManager"/>
-    <fullyQualifiedTypeName name="br.com.syonet.users.ConnectionFactory"/>
     <fullyQualifiedTypeName name="br.com.syonet.users.ImportFromFile.ImportUsers"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="br.com.syonet.users.model.entity.User"/>
+    <fullyQualifiedTypeName name="br.com.syonet.users.model.repository.UserRepository"/>
+    <fullyQualifiedTypeName name="br.com.syonet.users.ConnectionFactory"/>
 </qualifiedTypeNameHistroy>

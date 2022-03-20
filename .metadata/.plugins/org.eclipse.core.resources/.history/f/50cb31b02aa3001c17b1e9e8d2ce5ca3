@@ -1,7 +1,0 @@
-package br.com.syonet.users.business;
-
-import br.com.syonet.users.model.DAOs.UserDAO;
-
-public class UserService {
-	UserDAO dao;
-}
