@@ -1,0 +1,6 @@
+package br.com.syonet.users.model.repository;
+
+public class UserRepository {
+
+	Conection conn;
+}

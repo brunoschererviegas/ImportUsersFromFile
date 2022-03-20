@@ -1,0 +1,10 @@
+package br.com.syonet.users;
+
+public class ConnectionFactory {
+
+	static String url = "jdbc:postgresql://localhost:5432/usuarios";
+	static String username = "syonet";
+	static String password = "syonet";
+
+	
+}

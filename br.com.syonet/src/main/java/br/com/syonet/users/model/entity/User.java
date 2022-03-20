@@ -131,7 +131,7 @@ public class User {
 		User otherUser = (User) other;
 
 		boolean teste = ((otherUser.getLogin().equals(this.getLogin()))
-				|| (otherUser.getEmail().equals(this.getEmail())));
+				|| (otherUser.getId_usuarioerp().equals(this.getId_usuarioerp())));
 
 		return teste;
 	}
